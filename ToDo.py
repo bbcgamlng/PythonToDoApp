@@ -40,8 +40,6 @@ def add_clean():
 def clickExitButton():
     exit()
 
-
-
 # Create the main window
 root = tk.Tk()
 root.title("To-Do List App")
@@ -55,10 +53,10 @@ label_credits = tk.Label(text="BBC gaming", font=my_font2)
 label_credits.pack(side=tk.TOP)
 
 exitButton = tk.Button( text="Exit", command=clickExitButton)
+
 # Create the user interface
 frame_input = tk.Frame(root)
 frame_input.pack(padx=10, pady=10)
-
 
 label_task = tk.Label(frame_input, text="Enter task:")
 label_task.pack(side=tk.LEFT)
@@ -72,13 +70,14 @@ button_add.pack(side=tk.TOP, padx=10, pady=10)
 button_remove = tk.Button(root, text="Remove task", command=remove_task)
 button_remove.pack(side=tk.TOP, padx=10, pady=10)
 
+#Label for quick selet
 hello_label = tk.Label(root, text="Quick select\n-------------------------------------------------------------------------------")
 hello_label.pack(side=tk.TOP, padx=10, pady=10)
-
 
 frame_buttons = tk.Frame(root)
 frame_buttons.pack(side=tk.TOP, padx=10, pady=10)
 
+#Quick add section
 button_homework = tk.Button(frame_buttons, text="Add homework", command=add_homework)
 button_homework.pack(side=tk.LEFT, padx=10)
 
@@ -97,6 +96,7 @@ list_tasks.pack(side=tk.LEFT)
 scrollbar_tasks = tk.Scrollbar(frame_list)
 scrollbar_tasks.pack(side=tk.RIGHT, fill=tk.Y)
 
+#set ups a scroll wheel to view all your tasks
 list_tasks.config(yscrollcommand=scrollbar_tasks.set)
 scrollbar_tasks.config(command=list_tasks.yview)
 
